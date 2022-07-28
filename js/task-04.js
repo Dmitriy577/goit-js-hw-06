@@ -1,15 +1,16 @@
-const value = document.querySelector("#value");
+let counterValue = 0;
+const buttons = document.querySelectorAll("#counter button");
+const spanValue = document.querySelector("#value");
 
-var button = document.querySelector('button[data-action="decrement"]'),
-  counterValue = 0;
-button.onclick = function () {
-  counterValue -= 1;
-  value.innerHTML = counterValue;
+const onClick = (clicker) => {
+  if (clicker.target.getAttribute("data-action") === 'increment'){
+    counterValue++;
+  } else {
+    counterValue--;
+  }
+  spanValue.innerText = counterValue;
 };
 
-var button = document.querySelector('button[data-action="increment"]'),
-  counterValue = 0;
-button.onclick = function () {
-  counterValue += 1;
-  value.innerHTML = counterValue;
-};
+for (const button of buttons){ 
+  button.addEventListener("click", onClick);
+}

@@ -2,8 +2,6 @@ const allCategories = document.querySelector("#categories");
 const howCategories = categories.querySelectorAll(".item");
 const numberOfCategories = `Number of categories: ${howCategories.length}`;
 console.log(numberOfCategories);
-const str = '';
-console.log(str);
 const nodeListItem = categories.querySelectorAll(".item");
 
 nodeListItem.forEach((items) => {

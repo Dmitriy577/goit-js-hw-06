@@ -13,8 +13,8 @@ function handleSubmit(event) {
   }
 
   const formData = new FormData(form);
-  const valuesFotm = Object.fromEntries(formData.entries());
-  console.log(valuesFotm);
+  const valuesFotm = Object.fromEntries(elements);
+  console.log(elements);
 
   event.currentTarget.reset();
 }
