@@ -28,5 +28,5 @@ function createBoxes(amount) {
     );
   }
 
-  document.querySelector("#boxes").innerHTML = boxes.join("");
+  container.innerHTML = boxes.join("");
 }
