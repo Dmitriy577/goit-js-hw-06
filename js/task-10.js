@@ -8,25 +8,20 @@ const btnCreate = document.querySelector("#controls button[data-create]");
 const btnDestroy = document.querySelector("#controls button[data-destroy]");
 
 btnCreate.addEventListener('click', () => {
-  const amount = parseInt(numberElem.value,10);
+  const amount = Number(numberElem.value);
   createBoxes(amount);
 });
-
 btnDestroy.addEventListener('click', () => {
-  container.innerHTML = "";
+  document.querySelector("#boxes").innerHTML = "";
 });
-
+let baseSize = 30;
 function createBoxes(amount) {
-  const baseSize = 30;
   let boxes = [];
-
   for (let i = 0; i < amount; i += 1) {
     boxes.push(
-      `<div style="background-color: ${getRandomHexColor()}; width: ${
-        baseSize + 10 * i
-      }px; height: ${baseSize + 10 * i}px"></div>`
+      `<div style="background-color: ${getRandomHexColor()}; width: ${baseSize}px; height: ${baseSize}px"></div>`
     );
+    baseSize += 10;
   }
-
-  container.innerHTML = boxes.join("");
+  container.insertAdjacentHTML("beforeEnd", boxes.join(""));
 }
